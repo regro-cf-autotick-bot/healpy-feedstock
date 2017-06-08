@@ -1,4 +1,4 @@
-{% set version = "1.9.1" %}
+{% set version = "1.10.3" %}
 
 package:
     name: healpy
@@ -7,7 +7,7 @@ package:
 source:
     fn: healpy-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/h/healpy/healpy-{{ version }}.tar.gz
-    md5: 5d1b082dce77e56023329496cecab48d
+    md5: 6491777d1bcbd36d356551bf240d3a2f
 
 build:
     number: 0
