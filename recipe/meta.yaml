@@ -20,6 +20,7 @@ requirements:
         - setuptools
         - numpy x.x
         - pkg-config
+        - pytest-runner
 
     run:
         - python
@@ -27,6 +28,7 @@ requirements:
         - numpy x.x
         - six
         - astropy
+        - pytest-runner
 
 test:
     imports:
