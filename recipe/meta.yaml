@@ -1,4 +1,4 @@
-{% set version = "1.10.3" %}
+{% set version = "1.11.0" %}
 
 package:
     name: healpy
@@ -7,7 +7,7 @@ package:
 source:
     fn: healpy-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/h/healpy/healpy-{{ version }}.tar.gz
-    md5: 6491777d1bcbd36d356551bf240d3a2f
+    md5: c30daf225b3173224d6ea0cb10714b87
 
 build:
     number: 0
@@ -20,6 +20,7 @@ requirements:
         - setuptools
         - numpy x.x
         - pkg-config
+        - pytest-runner
 
     run:
         - python
@@ -27,6 +28,7 @@ requirements:
         - numpy x.x
         - six
         - astropy
+        - pytest-runner
 
 test:
     imports:
