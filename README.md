@@ -9,8 +9,6 @@ Feedstock license: BSD 3-Clause
 
 Summary: Healpix tools package for Python
 
-
-
 Current build status
 ====================
 
