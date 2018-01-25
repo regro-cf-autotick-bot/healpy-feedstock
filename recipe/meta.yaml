@@ -1,16 +1,17 @@
+{% set name = "healpy" %}
 {% set version = "1.11.0" %}
+{% set sha256 = "8c3c7982ae188549315a11f4d1aa6528cd1ccf078017ca20120ff2cf1b47babe" %}
 
 package:
-    name: healpy
+    name: {{ name|lower }}
     version: {{version}}
 
 source:
-    fn: healpy-{{ version }}.tar.gz
-    url: https://pypi.io/packages/source/h/healpy/healpy-{{ version }}.tar.gz
-    md5: c30daf225b3173224d6ea0cb10714b87
+    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+    sha256: {{ sha256 }}
 
 build:
-    number: 0
+    number: 1
     script: python setup.py install --single-version-externally-managed --record record.txt
     skip: True  # [win]
 
@@ -18,14 +19,18 @@ requirements:
     build:
         - python
         - setuptools
-        - numpy x.x
         - pkg-config
+        - toolchain
+        - numpy 1.7.*  # [py27]
+        - numpy 1.9.*  # [py35]
+        - numpy 1.11.*  # [py36]
         - pytest-runner
-
     run:
         - python
         - matplotlib
-        - numpy x.x
+        - numpy >=1.7  # [py27]
+        - numpy >=1.9  # [py35]
+        - numpy >=1.11  # [py36]
         - six
         - astropy
         - pytest-runner
@@ -45,6 +50,7 @@ about:
 
 extra:
     recipe-maintainers:
-        - mwcraig
-        - zonca
         - lpsinger
+        - mwcraig
+        - pkgw
+        - zonca
