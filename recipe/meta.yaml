@@ -1,6 +1,6 @@
 {% set name = "healpy" %}
-{% set version = "1.11.0" %}
-{% set sha256 = "8c3c7982ae188549315a11f4d1aa6528cd1ccf078017ca20120ff2cf1b47babe" %}
+{% set version = "1.12.0" %}
+{% set sha256 = "a0e6d7727428eff72c9141d7fb741f229cab99f40e1444d57416231dd8ec8eab" %}
 
 package:
     name: {{ name|lower }}
@@ -33,6 +33,7 @@ requirements:
         - numpy >=1.11  # [py36]
         - six
         - astropy
+        - scipy
         - pytest-runner
 
 test:
