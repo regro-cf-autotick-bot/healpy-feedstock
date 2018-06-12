@@ -33,6 +33,7 @@ requirements:
         - numpy >=1.11  # [py36]
         - six
         - astropy
+        - scipy
         - pytest-runner
 
 test:
