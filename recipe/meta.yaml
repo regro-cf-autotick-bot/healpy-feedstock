@@ -17,20 +17,23 @@ build:
 
 requirements:
     build:
+        - pkg-config
+        - {{ compiler('fortran') }}
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+    host:
         - python
         - setuptools
-        - pkg-config
-        - toolchain
-        - numpy 1.7.*  # [py27]
-        - numpy 1.9.*  # [py35]
-        - numpy 1.11.*  # [py36]
+        - numpy        # [py27]
+        - numpy        # [py35]
+        - numpy         # [py36]
         - pytest-runner
     run:
         - python
         - matplotlib
-        - numpy >=1.7  # [py27]
-        - numpy >=1.9  # [py35]
-        - numpy >=1.11  # [py36]
+        - {{ pin_compatible('numpy') }}   # [py27]
+        - {{ pin_compatible('numpy') }}   # [py35]
+        - {{ pin_compatible('numpy') }}   # [py36]
         - six
         - astropy
         - scipy
