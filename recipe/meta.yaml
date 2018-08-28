@@ -1,6 +1,6 @@
 {% set name = "healpy" %}
-{% set version = "1.12.3" %}
-{% set sha256 = "d3b5f143729b3709d237c7f3c570f9a666d26114495dcf3794f086e0f25708b5" %}
+{% set version = "1.12.4" %}
+{% set sha256 = "dff1748b420065290a12ae87ca80f18df8ceefc65563315fc2667a67604a2b70" %}
 
 package:
     name: {{ name|lower }}
