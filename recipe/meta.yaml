@@ -9,10 +9,12 @@ package:
 source:
     url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
     sha256: {{ sha256 }}
+    patches:
+      - macos-c++-linking.patch  # [osx]
 
 build:
-    number: 0
-    script: python setup.py install --single-version-externally-managed --record record.txt
+    number: 1000
+    script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
     skip: True  # [win]
 
 requirements:
@@ -24,16 +26,14 @@ requirements:
     host:
         - python
         - setuptools
-        - numpy        # [py27]
-        - numpy        # [py35]
-        - numpy         # [py36]
+        - numpy
+        - pip
         - pytest-runner
+        - six
     run:
         - python
         - matplotlib
-        - {{ pin_compatible('numpy') }}   # [py27]
-        - {{ pin_compatible('numpy') }}   # [py35]
-        - {{ pin_compatible('numpy') }}   # [py36]
+        - {{ pin_compatible('numpy') }}
         - six
         - astropy
         - scipy
