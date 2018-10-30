@@ -12,7 +12,7 @@ source:
 
 build:
     number: 1000
-    script: python setup.py install --single-version-externally-managed --record record.txt
+    script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
     skip: True  # [win]
 
 requirements:
@@ -24,16 +24,14 @@ requirements:
     host:
         - python
         - setuptools
-        - numpy        # [py27]
-        - numpy        # [py35]
-        - numpy         # [py36]
+        - numpy
+        - pip
         - pytest-runner
+        - six
     run:
         - python
         - matplotlib
-        - {{ pin_compatible('numpy') }}   # [py27]
-        - {{ pin_compatible('numpy') }}   # [py35]
-        - {{ pin_compatible('numpy') }}   # [py36]
+        - {{ pin_compatible('numpy') }}
         - six
         - astropy
         - scipy
