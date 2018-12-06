@@ -1,6 +1,6 @@
 {% set name = "healpy" %}
-{% set version = "1.12.5" %}
-{% set sha256 = "10585eb4a30f04ec72ca8d289465dbdc61c5c81d56c46c3f69ee298f7997d45c" %}
+{% set version = "1.12.6" %}
+{% set sha256 = "b4b5ce174c5662e34e12ba387d0c1c498b51a99c562f20966d0b2dd39c218650" %}
 
 package:
     name: {{ name|lower }}
@@ -14,7 +14,6 @@ source:
 
 build:
     number: 1000
-    script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
     skip: True  # [win]
 
 requirements:
