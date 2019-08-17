@@ -50,6 +50,7 @@ test:
 about:
     home: http://github.com/healpy
     license: GPL-2.0
+    license_file: COPYING
     summary: Healpix tools package for Python
 
 extra:
