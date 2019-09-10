@@ -1,6 +1,6 @@
 {% set name = "healpy" %}
-{% set version = "1.12.9" %}
-{% set sha256 = "8f75b6d7804cf55d3588c0b5fa8e865de06e65d8da65d74c91f2dcfd4c3376fc" %}
+{% set version = "1.12.10" %}
+{% set sha256 = "3d797aee3501a810d4f210c1f89af4540e7873eaf196d01a0187bb19d5bfab91" %}
 
 package:
     name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
       - macos-c++-linking.patch  # [osx]
 
 build:
-    number: 1
+    number: 0
     skip: True  # [win]
 
 requirements:
