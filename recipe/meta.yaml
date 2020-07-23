@@ -20,7 +20,7 @@ requirements:
   build:
     - pkg-config
     - openssl
-    - cfitsio
+    - libopenssl-static
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
