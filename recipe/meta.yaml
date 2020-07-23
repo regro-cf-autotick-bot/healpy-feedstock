@@ -1,61 +1,64 @@
 {% set name = "healpy" %}
-{% set version = "1.13.0" %}
-{% set sha256 = "d0ae02791c2404002a09c643e9e50bc58e3d258f702c736dc1f39ce1e6526f73" %}
+{% set version = "1.14.0" %}
+{% set sha256 = "2720b5f96c314bdfdd20b6ffc0643ac8091faefcf8fd20a4083cedff85a66c5e" %}
 
 package:
-    name: {{ name|lower }}
-    version: {{version}}
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: {{ sha256 }}
-    patches:
-      - macos-c++-linking.patch  # [osx]
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+  patches:
+    - macos-c++-linking.patch    # [osx]
 
 build:
-    number: 1
-    skip: True  # [win]
+  number: 0
+  skip: true  # [win]
 
 requirements:
-    build:
-        - pkg-config
-        - {{ compiler('fortran') }}
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-    host:
-        - cython
-        - python
-        - setuptools
-        - numpy
-        - pip
-        - pytest-runner
-        - six
-    run:
-        - python
-        - matplotlib-base
-        - {{ pin_compatible('numpy') }}
-        - six
-        - astropy
-        - scipy
-        - pytest-runner
+  build:
+    - pkg-config
+    - openssl
+    - libopenssl-static
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - cfitsio
+    - cython
+    - python
+    - setuptools
+    - numpy
+    - pip
+    - pytest-runner
+    - six
+  run:
+    - python
+    - matplotlib-base
+    - {{ pin_compatible('numpy') }}
+    - six
+    - astropy
+    - scipy
+    - pytest-runner
 
 test:
-    imports:
-        - healpy
-        - healpy.test
-    requires:
-        - pytest
-        - nose
+  imports:
+    - healpy
+    - healpy.test
+  requires:
+    - pytest
+    - nose
 
 about:
-    home: http://github.com/healpy
-    license: GPL-2.0
-    license_file: COPYING
-    summary: Healpix tools package for Python
+  home: http://github.com/healpy
+  license: GPL-2.0
+  license_file: COPYING
+  summary: Healpix tools package for Python
 
 extra:
-    recipe-maintainers:
-        - lpsinger
-        - mwcraig
-        - pkgw
-        - zonca
+  recipe-maintainers:
+    - lpsinger
+    - mwcraig
+    - pkgw
+    - zonca
