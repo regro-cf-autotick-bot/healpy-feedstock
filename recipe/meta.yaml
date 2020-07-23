@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - pkg-config
+    - openssl
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
