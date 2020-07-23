@@ -25,6 +25,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
+    - cfitsio
     - cython
     - python
     - setuptools
