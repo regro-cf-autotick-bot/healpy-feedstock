@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - pkg-config
+    - cfitsio
     - openssl
     - libopenssl-static
     - {{ compiler('fortran') }}
@@ -34,6 +35,7 @@ requirements:
     - six
   run:
     - python
+    - cfitsio
     - matplotlib-base
     - {{ pin_compatible('numpy') }}
     - six
