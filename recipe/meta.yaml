@@ -57,9 +57,11 @@ test:
 
 about:
   home: http://github.com/healpy
-  license: GPL-2.0
+  license: GPL-2.0-only
   license_file: COPYING
   summary: Healpix tools package for Python
+  doc_url: http://healpy.readthedocs.org/
+  dev_url: http://github.com/healpy/healpy
 
 extra:
   recipe-maintainers:
