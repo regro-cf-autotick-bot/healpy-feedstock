@@ -17,7 +17,7 @@ source:
     - win-pixelweights-test.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [py<310]
 
 requirements:
