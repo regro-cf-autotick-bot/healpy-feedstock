@@ -13,8 +13,6 @@ source:
     - macos-c++-linking.patch    # [osx]
     - cross-rpath-flag-workaround.patch  # [aarch64]
     - win-setup-pkgconfig.patch  # [win]
-    - win-pixel-lib-int64.patch  # [win]
-    - win-pixelweights-test.patch
 
 build:
   number: 0
